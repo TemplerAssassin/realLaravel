@@ -1,12 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Session;
+use App\Models\UserVerify;
+use Mail;
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 
 use function PHPUnit\Framework\isFalse;
 
@@ -85,6 +92,15 @@ class AuthController extends Controller
             "status" => true, 
             "redirect" => url("login")
         ]);
+    }
+
+    public function dashboard(): RedirectResponse
+    {
+        if(Auth::check()){
+            return view('/');
+        }
+  
+        return redirect("login")->withSuccess('Opps! You do not have access');
     }
 
     public function logout(Request $request)

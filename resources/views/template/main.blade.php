@@ -179,7 +179,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="/dashboard" class="brand-link">
+            <a href="/" class="brand-link">
                 <img src="/assets/dist/img/mark.png" alt="Real Wealth Logo"
                     class="brand-image img-circle elevation-3">
                 <span class="brand-text font-weight-light">Real Wealth</span>
@@ -193,7 +193,7 @@
                         <img src="/assets/dist/img/avatar5.png" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">{{ auth()->user()->name }}</a>
+                        <a href="/dashboard" class="d-block">{{ auth()->user()->name }}</a>
                     </div>
                 </div>
 

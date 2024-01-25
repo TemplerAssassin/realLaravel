@@ -2,6 +2,7 @@
 @section('title', 'Add did_know')
 @section('content')
 
+<link rel="shortcut icon" type="image/png" href="assets/images/mark.png">
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <div class="content-header">
@@ -12,8 +13,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="/Did_know">did_know</a></li>
+            <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+            <li class="breadcrumb-item"><a href="/did_know">did_know</a></li>
             <li class="breadcrumb-item active">@yield('title')</li>
           </ol>
         </div><!-- /.col -->
@@ -43,7 +44,7 @@
                   <div class="col-lg-12">
                     <div class="form-group">
                       <label for="content">Content</label>
-                      <input type="text" name="content" class="form-control @error('content') is-invalid @enderror" id="content" placeholder="Input your idea" value="{{old('content')}}" required>
+                      <textarea type="text" name="content" class="form-control @error('content') is-invalid @enderror" id="content" placeholder="Input your idea" value="{{old('content')}}" required></textarea>
                       @error('content')
                       <span class="invalid-feedback text-danger">{{ $message }}</span>
                       @enderror

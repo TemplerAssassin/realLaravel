@@ -68,5 +68,8 @@ Route::resource('/about', AboutController::class)->middleware('auth');
 Route::post('/stock_test', [StockController::class, 'test']);
 
 
+//route email verify
+// Route::get('dashboard', [AuthController::class, 'dashboard'])->middleware(['auth', 'is_verify_email']); 
+Route::get('account/verify/{token}', [AuthController::class, 'verifyAccount'])->name('user.verify'); 
 
 

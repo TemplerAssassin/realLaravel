@@ -2,6 +2,8 @@
 @section('title', 'Add about')
 @section('content')
 
+
+
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <div class="content-header">
@@ -12,8 +14,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="/About">about</a></li>
+            <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+            <li class="breadcrumb-item"><a href="/about">about</a></li>
             <li class="breadcrumb-item active">@yield('title')</li>
           </ol>
         </div><!-- /.col -->
@@ -54,7 +56,7 @@
                   <div class="col-lg-12">
                     <div class="form-group">
                       <label for="content">Content</label>
-                      <input type="text" name="content" class="form-control @error('content') is-invalid @enderror" id="content" placeholder="Input your idea" value="{{old('content')}}" required>
+                      <textarea type="text" name="content" class="form-control @error('content') is-invalid @enderror" id="content" placeholder="Input your idea" value="{{old('content')}}" required></textarea>
                       @error('content')
                       <span class="invalid-feedback text-danger">{{ $message }}</span>
                       @enderror

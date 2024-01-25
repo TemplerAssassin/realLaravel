@@ -13,8 +13,8 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item"><a href="/Stock">Stock</a></li>
+                        <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/stock">Stock</a></li>
                         <li class="breadcrumb-item active">@yield('title')</li>
                     </ol>
                 </div><!-- /.col -->
@@ -45,7 +45,7 @@
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label for="question">Question</label>
-                                            <input type="text" name="question" class="form-control @error('question') is-invalid @enderror" id="question" placeholder="reset" value="{{old('question', $stock->question)}}" required>
+                                            <textarea type="text" name="question" class="form-control @error('question') is-invalid @enderror" id="question" placeholder="reset" value="{{old('question', $stock->question)}}" required></textarea>
                                             @error('question')
                                             <span class="invalid-feedback text-danger">{{ $message }}</span>
                                             @enderror

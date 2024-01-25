@@ -69,8 +69,11 @@
                   Informed Investment Decisions
               </h2>
               <h3 style="color: white">
-                Contact Us: <li><a href="#"><i class="fa fa-envelope"></i> a.4411879@gmail.com</a></li>
+                Contact Us:
               </h3>
+              <ul>
+                <li><a href="#"><i class="fa fa-envelope"></i> example@gmail.com</a></li>
+              <ul>
         </div>
     </div>
   </section>
@@ -266,13 +269,15 @@
                     <th width="20%">Input</th>
                     <th class="top-right-border">Result</th>                    
                 </tr>
-                @foreach ($stock as $item)
-                <tr  class="table-rounded">           
-                  <td>{{$item['question']}}</td>
-                  <td><input name="name" type="number" class="myInputForm form-control" id="name" required></td>
-                  <td class="myResultStatus"></td>              
+                @foreach ($stock as $index => $item)
+                <tr class="table-rounded">           
+                    <td>{{ $item['question'] }}</td>
+                    <td>
+                        <input name="name{{ $index }}" id="name{{ $index }}" type="number" class="myInputForm form-control" required>
+                    </td>
+                    <td class="myResultStatus"></td>              
                 </tr>
-                @endforeach
+            @endforeach
                   
               </table>
             </div>
